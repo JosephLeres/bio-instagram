@@ -1,3 +1,6 @@
+/*     FONTE GOOGLE   */
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 
 *{
     margin: 0;
@@ -35,10 +38,11 @@ header img{
     margin-bottom: 20px;
 }
 header h1{
+    font-family: "Michroma", sans-serif;
     font-size: 2em;
     margin-bottom: 10px;
     color: #000000;
-    font-weight: 200;
+    font-weight: 100;
 }
 a{
     text-decoration: none;
