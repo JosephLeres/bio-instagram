@@ -17,9 +17,16 @@
     <img src="images/foto.png" alt="Foto de Joseph Leres" class="avatar" />
 
     <header>
-     <h1 class="name">Joseph Leres</h1>
-     <p class="bio">Apaixonado por tecnologia!</p>
-    </header>
+  <h1 class="name">Joseph Leres</h1>
+
+  <div class="rotator-container" onclick="toggleRotation()">
+    <div id="rotator" class="rotator-text">
+      Carregando perfil...
+    </div>
+  </div>
+
+  <p class="bio">Alguns trabalhos!</p>
+</header>
 
     <nav class="links">    <!--- Navegação: Conjunto de links --->
       <a href="https://www.behance.net/josephleresdesign" target="_blank" class="btn-link">
@@ -40,6 +47,48 @@
   Desenvolvido por Joseph Leres © 2025.
 </footer>
 
+<script>
+  const frases = [
+    "🎯 Apaixonado por tecnologia, arte e educação.",
+    "💻 Analista de TI, Dev Web e estudante de Ciência da Computação.",
+    "📸 Produzo vídeos profissionais para redes sociais e empresas.",
+    "🎬 Faço roteiros e edições que conectam marcas a pessoas.",
+    "🎧 Músico e DJ produtor por paixão – o contrabaixo é minha alma.",
+    "📚 Ensino informática básica para e jovens em inclusão digital.",
+    "🚀 Transformo ideias criativas em soluções reais e acessíveis."
+  ];
+
+  let index = 0;
+  let isRunning = true;
+  const rotator = document.getElementById("rotator");
+
+  function showNextPhrase() {
+    if (!isRunning) return;
+
+    rotator.classList.add("fade-out");
+
+    setTimeout(() => {
+      rotator.textContent = frases[index];
+      rotator.classList.remove("fade-out");
+      index = (index + 1) % frases.length;
+    }, 500);
+  }
+
+  let interval = setInterval(showNextPhrase, 3000);
+
+  function toggleRotation() {
+    isRunning = !isRunning;
+    if (isRunning) {
+      interval = setInterval(showNextPhrase, 3000);
+    } else {
+      clearInterval(interval);
+    }
+  }
+
+  window.onload = () => {
+    rotator.textContent = frases[0];
+  };
+</script>
 
 </body>
 </html>
