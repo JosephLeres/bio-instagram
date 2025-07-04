@@ -29,7 +29,7 @@ body {
   align-items: center;
   justify-content: center;
   align-items: center;
-  padding: 30px 15px 50px 15px;
+  padding: 50px 15px 50px 15px;
 }
 
 .container {
@@ -41,7 +41,7 @@ body {
   transform: translateY(30px);
   animation: fadeIn 0.6s ease-out forwards;
 
-  margin-top: 30px;
+  margin-top: 35px;
 }
 /* Animação */
 @keyframes fadeIn {
